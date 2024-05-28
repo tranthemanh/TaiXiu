@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAME TAI XIU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="book-list-overlay" class="hidden overlay">
+    <div class="modal">
+        <h2>Lịch sử</h2>
+        <div class="hienthilichsu" id="hienthilichsu">
+            <ul id="danhsachlichsu"></ul>
+        </div>
+        <button id="donglichsu">Đóng</button>
+    </div>
+</div>
+<div id="naptien-chinh" class="hidden overlay">
+    <div class="modal">
+        <h2>Nạp Tiền</h2>
+        <input type="text" id="sotiennap" placeholder="Nhập số tiền cần nạp">
+        <button id="naptien">Nạp Tiền</button>
+        <button id="dongnaptien">Đóng</button>
+    </div>
+</div>
+<div id="ruttien-chinh" class="hidden overlay">
+    <div class="modal">
+        <h2>Nạp Tiền</h2>
+        <input type="text" id="sotienrut" placeholder="Nhập số tiền cần rút">
+        <button id="ruttien">Rút Tiền</button>
+        <button id="dongruttien">Đóng</button>
+    </div>
+</div>
+<div class="main">
+    <div>
+        <button type="button" id="yeucaunaptien">Nạp Tiền</button>
+        <button type="button" id="yeucauruttien">Rút Tiền</button>
+        <button type="button" id="xemlichsu">Lịch Sử Quay Thưởng</button>
+    </div>
+
+    <div>
+        <table border="1" style="text-align: center">
+            <tr>
+                <th colspan="3" style="font-size: 40px">TÀI XỈU TM5</th>
+            </tr>
+            <tr>
+                <td style="font-size: 30px">Tài</td>
+                <td id="dice" rowspan="2">
+                    <img id="dice1" src="images/dice1.png" alt="Dice 1">
+                    <img id="dice2" src="images/dice1.png" alt="Dice 2">
+                    <img id="dice3" src="images/dice1.png" alt="Dice 3">
+                </td>
+                <td style="font-size: 30px">Xỉu</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="sotiencuoctai" value="1000"></td>
+                <td><input type="text" id="sotiencuocxiu" value="1000"></td>
+            </tr>
+            <tr>
+                <td id="tongcuoctai">Tổng cược Tài: 0</td>
+                <td id="thoigian">Thời gian còn lại: 15 giây</td>
+                <td id="tongcuocxiu">Tổng cược Xỉu: 0</td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="cuoctai">Đặt Cược</button>
+                </td>
+                <td></td>
+                <td>
+                    <button id="cuocxiu">Đặt Cược</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" id="tongtien">Số tiền hiện có: 1000</td>
+            </tr>
+            <tr>
+                <td colspan="3" id="ketqua"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
