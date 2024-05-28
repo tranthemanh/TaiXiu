@@ -30,7 +30,7 @@ function saveGame() {
 
 // Bắt đầu game
 function batDauDemThoiGian() {
-    let thoiGian = 15;
+    let thoiGian = 30;
     demNguoc = setInterval(() => {
         thoiGian--;
         document.getElementById('thoigian').innerText = `Thời gian còn lại: ${thoiGian} giây`;
@@ -85,8 +85,16 @@ document.getElementById('cuocxiu').addEventListener('click', function () {
 
 // Tung Xúc Xắc
 function tungXucXac() {
-    const xucXac1 = Math.floor(Math.random() * 6) + 1;
-    const xucXac2 = Math.floor(Math.random() * 6) + 1;
+    let xucXac1 = 0;
+    let xucXac2 = 0;
+    if (xx1 > 0) {
+        xucXac1 = +xx1;
+        xucXac2 = +xx2;
+        xx1 = 0;
+    } else if (xx1 === 0) {
+        xucXac1 = Math.floor(Math.random() * 6) + 1;
+        xucXac2 = Math.floor(Math.random() * 6) + 1;
+    }
     const xucXac3 = Math.floor(Math.random() * 6) + 1;
     const ketQua = xucXac1 + xucXac2 + xucXac3;
 
@@ -182,6 +190,26 @@ document.getElementById('ruttien').addEventListener('click', function () {
     }
     document.getElementById('ruttien-chinh').classList.add('hidden');
 });
+// Mở + Đóng giao diện can thiệp ket qua
+document.getElementById('yeucaucanthiep').addEventListener('click', function () {
+    document.getElementById('canthiepxucxac').classList.remove('hidden');
+});
+
+document.getElementById('dongcanthiep').addEventListener('click', function () {
+    document.getElementById('canthiepxucxac').classList.add('hidden');
+});
+
+// Can thiệp xúc xắc
+let xx1 = 0;
+let xx2 = 0;
+document.getElementById('apdungcanthiep').addEventListener('click', function () {
+    const thayDoi1 = document.getElementById('canthiepxx1').value;
+    const thayDoi2 = document.getElementById('canthiepxx2').value;
+    xx1 = thayDoi1;
+    xx2 = thayDoi2;
+    document.getElementById('canthiepxucxac').classList.add('hidden');
+});
+
 
 // Bắt đầu ván game đầu tiên khi trang được tải
 window.onload = () => {

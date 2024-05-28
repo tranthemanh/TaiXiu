@@ -36,6 +36,7 @@
         <button type="button" id="yeucaunaptien">Nạp Tiền</button>
         <button type="button" id="yeucauruttien">Rút Tiền</button>
         <button type="button" id="xemlichsu">Lịch Sử Quay Thưởng</button>
+        <button type="button" id="yeucaucanthiep">Thay  đổi xúc xắc</button>
     </div>
 
     <div>
@@ -58,7 +59,7 @@
             </tr>
             <tr>
                 <td id="tongcuoctai">Tổng cược Tài: 0</td>
-                <td id="thoigian">Thời gian còn lại: 15 giây</td>
+                <td id="thoigian">Thời gian còn lại: 30 giây</td>
                 <td id="tongcuocxiu">Tổng cược Xỉu: 0</td>
             </tr>
             <tr>
@@ -77,6 +78,15 @@
                 <td colspan="3" id="ketqua"></td>
             </tr>
         </table>
+    </div>
+</div>
+<div id="canthiepxucxac" class="hidden overlay">
+    <div class="modal">
+        <h2>Lựa chọn kết quả cho xúc xắc</h2>
+        <p>Xúc xắc 1: <input type="number" id="canthiepxx1" value="1" min="1" max="6"></p>
+        <p>Xúc xắc 2: <input type="number" id="canthiepxx2" value="1" min="1" max="6"></p>
+        <button id="apdungcanthiep">Áp dụng can thiệp</button>
+        <button id="dongcanthiep">Đóng</button>
     </div>
 </div>
 <script src="scripts.js"></script>
