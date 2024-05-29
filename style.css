@@ -1,3 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -12,14 +23,15 @@
 
 .modal {
     background: #fff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 500px;
+    text-align: center;
 }
 
 .hienthilichsu {
-    max-height: 100px;
+    max-height: 200px;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
@@ -28,4 +40,72 @@
 
 .hidden {
     display: none;
+}
+
+.main {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+}
+
+td {
+    padding: 10px;
+    font-size: 18px;
+}
+
+input[type="text"], input[type="number"] {
+    width: 80%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#dice img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+#tongcuoctai, #tongcuocxiu, #thoigian, #tongtien, #ketqua {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
 }

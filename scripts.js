@@ -87,6 +87,8 @@ document.getElementById('cuocxiu').addEventListener('click', function () {
 function tungXucXac() {
     let xucXac1 = 0;
     let xucXac2 = 0;
+    let tongKQTai = 0;
+    let tongKQXiu = 0;
     if (xx1 > 0) {
         xucXac1 = +xx1;
         xucXac2 = +xx2;
@@ -110,26 +112,33 @@ function tungXucXac() {
         if (tongCuocXiu > 0) {
             tongTien += tongCuocXiu + tongCuocXiu * 0.98;
             ketQuaXiu += " Bạn thắng!";
+            tongKQXiu++;
         }
         if (tongCuocTai > 0) {
             ketQuaTai += " Bạn thua!";
+            tongKQTai++;
         }
     } else if (ketQua >= 11 && ketQua <= 17) {
         if (tongCuocTai > 0) {
             tongTien += tongCuocTai + tongCuocTai * 0.98;
             ketQuaTai += " Bạn thắng!";
+            tongKQTai++;
         }
         if (tongCuocXiu > 0) {
             ketQuaXiu += " Bạn thua!";
+            tongKQXiu++;
         }
     }
     tongSoTien.innerText = `Số tiền hiện có: ${tongTien.toFixed(2)}`;
     document.getElementById('ketqua').innerText = hienThiKetQua + " " + ketQuaTai + " " + ketQuaXiu;
 
     // Thêm vào lịch sử
+
     const listItem = document.createElement('li');
     listItem.textContent = hienThiKetQua + " " + ketQuaTai + " " + ketQuaXiu;
     dsLichSuKQ.appendChild(listItem);
+    document.getElementById('tongtai').innerHTML = `Tổng kết quả Tài: ${tongKQTai}`;
+    document.getElementById('tongxiu').innerHTML = `Tổng kết quả Tài: ${tongKQXiu}`;
 
     tongCuocTai = 0;
     tongCuocXiu = 0;
