@@ -9,11 +9,10 @@
 <div id="book-list-overlay" class="hidden overlay">
     <div class="modal">
         <h2>Lịch sử</h2>
-        <h3 id="tongtai">Tổng kết quả Tài: </h3>
-        <h3 id="tongxiu">Tổng kết quả Xỉu: </h3>
+        <h3 id="tongtai"></h3>
+        <h3 id="tongxiu"></h3>
         <div class="hienthilichsu" id="hienthilichsu">
-            <ul id="danhsachlichsu">
-            </ul>
+            <ul id="danhsachlichsu"></ul>
         </div>
         <button id="donglichsu">Đóng</button>
     </div>
@@ -38,8 +37,9 @@
     <div>
         <button type="button" id="yeucaunaptien">Nạp Tiền</button>
         <button type="button" id="yeucauruttien">Rút Tiền</button>
-        <button type="button" id="xemlichsu">Lịch Sử Quay Thưởng</button>
-        <button type="button" id="yeucaucanthiep">Thay  đổi xúc xắc</button>
+        <button type="button" id="xemlichsu" onclick="tongSoTaiVaXiu()" >Lịch Sử Quay Thưởng</button>
+        <button type="button" id="yeucaucanthiep">Thay đổi xúc xắc</button>
+<!--        <button type="button" onclick="xoaLichSu()">Xóa lịch sử</button>-->
     </div>
 
     <div>
@@ -48,13 +48,13 @@
                 <th colspan="3" style="font-size: 40px">TÀI XỈU TM5</th>
             </tr>
             <tr>
-                <td style="font-size: 30px">Tài</td>
+                <td style="font-size: 60px">Tài</td>
                 <td id="dice" rowspan="2">
                     <img id="dice1" src="images/dice1.png" alt="Dice 1">
                     <img id="dice2" src="images/dice1.png" alt="Dice 2">
                     <img id="dice3" src="images/dice1.png" alt="Dice 3">
                 </td>
-                <td style="font-size: 30px">Xỉu</td>
+                <td style="font-size: 60px">Xỉu</td>
             </tr>
             <tr>
                 <td><input type="text" id="sotiencuoctai" value="1000"></td>
