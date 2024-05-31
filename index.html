@@ -24,7 +24,7 @@
 <div id="naptien-chinh" class="hidden overlay">
     <div class="modal">
         <h2>Nạp Tiền</h2>
-        <input type="text" id="sotiennap" placeholder="Nhập số tiền cần nạp">
+        <input type="text" id="sotiennap" oninput="nhapTienViet(this)" placeholder="Nhập số tiền cần nạp">
         <button id="naptien">Nạp Tiền</button>
         <button id="dongnaptien">Đóng</button>
     </div>
@@ -32,7 +32,7 @@
 <div id="ruttien-chinh" class="hidden overlay">
     <div class="modal">
         <h2>Rút Tiền</h2>
-        <input type="text" id="sotienrut" placeholder="Nhập số tiền cần rút">
+        <input type="text" id="sotienrut" oninput="nhapTienViet(this)" placeholder="Nhập số tiền cần rút">
         <button id="ruttien">Rút Tiền</button>
         <button id="dongruttien">Đóng</button>
     </div>
@@ -61,8 +61,8 @@
                 <td style="font-size: 60px">Xỉu</td>
             </tr>
             <tr>
-                <td><input type="text" id="sotiencuoctai" value="1000"></td>
-                <td><input type="text" id="sotiencuocxiu" value="1000"></td>
+                <td><input type="text" oninput="nhapTienViet(this)" id="sotiencuoctai" value="1,000"></td>
+                <td><input type="text" oninput="nhapTienViet(this)" id="sotiencuocxiu" value="1,000"></td>
             </tr>
             <tr>
                 <td id="tongcuoctai">Tổng cược Tài: 0</td>

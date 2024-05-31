@@ -74,36 +74,40 @@ function thietLapLaiGame() {
     tongSoTaiVaXiu();
 }
 
-// //Xóa lịch sử trò chơi
-// function xoaLichSu() {
-//     localStorage.removeItem('gameTaiXiu1');
-//     dsLichSuKQ.innerHTML = 0;
-//
-// }
+//Nhập giá trị bằng tiền việt nam trong input
+function nhapTienViet(input) {
+    // Lấy giá trị hiện tại của input và loại bỏ ký tự VNĐ
+    let value = input.value.replace(/[^0-9]/g, '');
+
+    // Định dạng giá trị với dấu phẩy sau mỗi 3 chữ số
+    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+    input.value = value;
+}
 
 // Kiểm tra tiền cược Tài
 document.getElementById('cuoctai').addEventListener('click', function () {
-    tienCuocTai = parseInt(document.getElementById('sotiencuoctai').value);
+    tienCuocTai = parseInt(document.getElementById('sotiencuoctai').value.replace(/,/g, ''));
     if (tienCuocTai > tongTien) {
         alert("Bạn không có đủ tiền cược!");
     } else {
         tongTien -= tienCuocTai;
         tongCuocTai += tienCuocTai;
         tongSoTien.innerText = `Số tiền hiện có: ${tongTien.toLocaleString('vi-VN')} đ`;
-        document.getElementById('tongcuoctai').innerText = `Tổng cược Tài: ${tongCuocTai}`;
+        document.getElementById('tongcuoctai').innerText = `Tổng cược Tài: ${tongCuocTai.toLocaleString('vi-VN')} đ`;
     }
 });
 
 // Kiểm tra tiền cược Xỉu
 document.getElementById('cuocxiu').addEventListener('click', function () {
-    tienCuocXiu = parseInt(document.getElementById('sotiencuocxiu').value);
+    tienCuocXiu = parseInt(document.getElementById('sotiencuocxiu').value.replace(/,/g, ''));
     if (tienCuocXiu > tongTien) {
         alert("Bạn không có đủ tiền cược!");
     } else {
         tongTien -= tienCuocXiu;
         tongCuocXiu += tienCuocXiu;
         tongSoTien.innerText = `Số tiền hiện có: ${tongTien.toLocaleString('vi-VN')} đ`;
-        document.getElementById('tongcuocxiu').innerText = `Tổng cược Xỉu: ${tongCuocXiu}`;
+        document.getElementById('tongcuocxiu').innerText = `Tổng cược Xỉu: ${tongCuocXiu.toLocaleString('vi-VN')} đ`;
     }
 });
 
@@ -209,7 +213,7 @@ document.getElementById('dongnaptien').addEventListener('click', function () {
 
 // Nạp tiền
 document.getElementById('naptien').addEventListener('click', function () {
-    const amount = parseFloat(document.getElementById('sotiennap').value);
+    const amount = parseFloat(document.getElementById('sotiennap').value.replace(/,/g, ''));
     if (amount > 0) {
         tongTien += amount;
         tongSoTien.innerText = `Số tiền hiện có: ${tongTien.toLocaleString('vi-VN')} đ`;
@@ -228,7 +232,7 @@ document.getElementById('dongruttien').addEventListener('click', function () {
 
 // Rút tiền
 document.getElementById('ruttien').addEventListener('click', function () {
-    const amount = parseFloat(document.getElementById('sotienrut').value);
+    const amount = parseFloat(document.getElementById('sotienrut').value.replace(/,/g, ''));
     if (amount > 0 && amount <= tongTien) {
         tongTien -= amount;
         tongSoTien.innerText = `Số tiền hiện có: ${tongTien.toLocaleString('vi-VN')} đ`;
