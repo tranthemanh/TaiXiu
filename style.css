@@ -26,7 +26,8 @@ body {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
     text-align: center;
 }
 
@@ -47,9 +48,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 90%;
     max-width: 600px;
     text-align: center;
+    margin: 20px;
 }
 
 table {
@@ -62,7 +64,7 @@ th {
     background-color: #4CAF50;
     color: white;
     padding: 10px;
-    font-size: 40px;
+    font-size: 24px; /* Adjusted for better responsiveness */
 }
 
 td {
@@ -105,7 +107,50 @@ button:hover {
     margin-top: 10px;
 }
 
+/* Fixed width for bet summary */
+#tongcuoctai, #tongcuocxiu {
+    width: 200px;
+    display: inline-block;
+    text-align: left;
+}
+
 ul {
     list-style-type: none;
     padding-left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .modal, .main {
+        width: 95%;
+        padding: 10px;
+    }
+
+    th {
+        font-size: 18px;
+    }
+
+    td {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    input[type="text"], input[type="number"] {
+        width: 95%;
+        padding: 6px;
+    }
+
+    #dice img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Adjust fixed width for mobile */
+    #tongcuoctai, #tongcuocxiu {
+        width: 150px;
+    }
 }

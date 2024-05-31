@@ -157,31 +157,39 @@ function tungXucXac() {
     document.getElementById('dice3').src = `images/dice${xucXac3}.png`;
 
     let hienThiKetQua = `Kết quả: ${xucXac1} + ${xucXac2} + ${xucXac3} = ${ketQua}`;
-    let ketQuaTai = "", ketQuaXiu = "";
+    let ketQuaVanCuoc = "";
+
     if (ketQua >= 3 && ketQua <= 10) {
         if (tongCuocXiu > 0) {
             tongTien += tongCuocXiu + tongCuocXiu * 0.98;
-            ketQuaXiu += " Bạn thắng!";
-        }
-        if (tongCuocTai > 0) {
-            ketQuaTai += " Bạn thua!";
         }
     } else if (ketQua >= 11 && ketQua <= 18) {
         if (tongCuocTai > 0) {
             tongTien += tongCuocTai + tongCuocTai * 0.98;
-            ketQuaTai += " Bạn thắng!";
         }
-        if (tongCuocXiu > 0) {
-            ketQuaXiu += " Bạn thua!";
+    }
+
+    if (ketQua >= 3 && ketQua <= 10) {
+        if ((tongTien - (tongCuocXiu * 0.98) + tongCuocTai) > tongTien) {
+            ketQuaVanCuoc += " Bạn thua!";
+        }
+        if ((tongTien - (tongCuocXiu * 0.98) + tongCuocTai) < tongTien) {
+            ketQuaVanCuoc += " Bạn thắng!";
+        }
+    } else if (ketQua >= 11 && ketQua <= 18) {
+        if ((tongTien - (tongCuocTai * 0.98) + tongCuocXiu) > tongTien) {
+            ketQuaVanCuoc += " Bạn thua!";
+        }
+        if ((tongTien - (tongCuocTai * 0.98) + tongCuocXiu) < tongTien) {
+            ketQuaVanCuoc += " Bạn thắng!";
         }
     }
     tongSoTien.innerText = `Số tiền hiện có: ${tongTien.toLocaleString("vi-VN")} đ`;
-    document.getElementById('ketqua').innerText = hienThiKetQua + " " + ketQuaTai + " " + ketQuaXiu;
+    document.getElementById('ketqua').innerText = hienThiKetQua + " " + ketQuaVanCuoc;
 
     // Thêm vào lịch sử
-
     const listItem = document.createElement('li');
-    listItem.textContent = hienThiKetQua + " " + ketQuaTai + " " + ketQuaXiu;
+    listItem.textContent = hienThiKetQua + " " + ketQuaVanCuoc;
     dsLichSuKQ.appendChild(listItem);
 
     tongCuocTai = 0;
@@ -192,6 +200,7 @@ function tungXucXac() {
     thietLapLaiGame();
     saveGame();
 }
+
 
 // Mở + Đóng giao diện lịch sử
 document.getElementById('xemlichsu').addEventListener('click', function () {
